@@ -1,15 +1,19 @@
-// This is a "stub" file.  It's a little start on your solution.
-// It's not a complete solution though; you have to write some code.
-
-// Package twofer should have a package comment that summarizes what it's about.
-// https://golang.org/doc/effective_go.html#commentary
+/*
+Package twofer provides a library with a single method
+ShareWith which takes in a string and outputs a silly message.
+*/
 package twofer
 
-// ShareWith should have a comment documenting it.
+import "fmt"
+
+// ShareWith takes in a string and outputs a string
+// of the form "One for {string}, one for me.".
+// If the provided string is empty, the output string is
+// of the form "One for you, one for me."
 func ShareWith(name string) string {
-	// Write some code here to pass the test suite.
-	// Then remove all the stock comments.
-	// They're here to help you get started but they only clutter a finished solution.
-	// If you leave them in, reviewers may protest!
-	return ""
+	if name == "" {
+		name = "you"
+	}
+
+	return fmt.Sprintf("One for %s, one for me.", name)
 }
