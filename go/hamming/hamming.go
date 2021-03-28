@@ -12,8 +12,7 @@ import "fmt"
 func Distance(a, b string) (int, error) {
 	aLen, bLen := len(a), len(b)
 	if aLen != bLen {
-		return 0, fmt.Errorf("Expected string arguments a and b to have the same lengths."+
-			"Actual [a - val: %q - len: %d], [b - val: %q - len: %d", a, aLen, b, bLen)
+		return 0, fmt.Errorf("a and b had unequal lengths: %d, %d", aLen, bLen)
 	}
 
 	hammingDist := 0
