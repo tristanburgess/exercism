@@ -1,6 +1,5 @@
-export const decodedValue = (colors) => {
-  const firstTwo = colors.slice(0, 2)
-  return (10 * COLORS.indexOf(firstTwo[0])) + COLORS.indexOf(firstTwo[1])
+export const decodedValue = ([color1, color2]) => {
+  return 10 * COLORS.indexOf(color1) + COLORS.indexOf(color2)
 } 
 
 export const COLORS = [
